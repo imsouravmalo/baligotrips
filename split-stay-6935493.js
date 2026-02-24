@@ -24,9 +24,17 @@ function roundAndSeparate() {
   INR Cost ( Full Board Plan)                 99390976 -> 99482272
   INR Cost ( Full Board - India Billing )     99391070 -> 99482273 */
   
+    var result1 = loader.engine.document.getElementById(120546069).getProperty('value.value');
+    var roundedValue1 = Math.ceil(result1); //- rounding to next integer
+  loader.engine.document.getElementById(120546070).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
+
     var result1 = loader.engine.document.getElementById(120547107).getProperty('value.value');
     var roundedValue1 = Math.ceil(result1); //- rounding to next integer
   loader.engine.document.getElementById(120553735).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
+
+    var result1 = loader.engine.document.getElementById(120553737).getProperty('value.value');
+    var roundedValue1 = Math.ceil(result1); //- rounding to next integer
+  loader.engine.document.getElementById(120553738).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
     
   };
   
