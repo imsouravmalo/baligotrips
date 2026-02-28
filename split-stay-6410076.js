@@ -74,4 +74,8 @@ function roundAndSeparate() {
 
   };
 
-  window.onclick = roundAndSeparate; 
+window.onclick = function() {
+    setTimeout(function() {
+      roundAndSeparate();
+    }, 100);
+  };
