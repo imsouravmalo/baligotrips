@@ -57,5 +57,9 @@ function roundAndSeparate() {
   loader.engine.document.getElementById(101445205).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
     
   };
-  
-  window.onclick = roundAndSeparate;  
+
+window.onclick = function() {
+    setTimeout(function() {
+      roundAndSeparate();
+    }, 100);
+  };
