@@ -74,8 +74,22 @@ function roundAndSeparate() {
   
   };
   
-  window.onclick = function() {
+  function triggerRoundAndSeparate() {
     setTimeout(function() {
       roundAndSeparate();
-    }, 100);
-  };
+    }, 500);
+  }
+
+  window.onclick = triggerRoundAndSeparate;
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const onChangeEls = document.querySelectorAll(`
+      select,
+      input[type="date"],
+      input[type="radio"],
+      input[type="checkbox"]`
+    )
+    onChangeEls.forEach(function (onChangeEl) {
+      onChangeEl.addEventListener('change', triggerRoundAndSeparate);
+    });
+  });
