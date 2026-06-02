@@ -55,7 +55,10 @@ function roundAndSeparate() {
     var result1 = loader.engine.document.getElementById(121284184).getProperty('value.value');
     var roundedValue1 = Math.ceil(result1); //- rounding to next integer
   loader.engine.document.getElementById(121284189).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
-    
+
+	var result1 = loader.engine.document.getElementById(121322019).getProperty('value.value');
+    var roundedValue1 = Math.ceil(result1); //- rounding to next integer
+  loader.engine.document.getElementById(121322022).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
   };
   
   function triggerRoundAndSeparate() {
