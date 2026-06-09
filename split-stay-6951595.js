@@ -67,6 +67,18 @@ function roundAndSeparate() {
     }, 500);
   }
 
+  function handleSpecialCaseForRadioButtons(el) {
+    const targetedParent = el.target.closest('[data-type="radio"][data-id]');
+
+    if (targetedParent === null) return; 
+
+    if (targetedParent.dataset.id === '121357506') {
+      loader.engine.document.getElementById(121357503).setValue(({"value": "b2bops@baligotrips.com"}));
+    } else if(targetedParent.dataset.id === '121357505') {
+      loader.engine.document.getElementById(121357503).setValue(({"value": "b2b@baligotrips.com"}));
+    }
+  }
+
   window.onclick = triggerRoundAndSeparate;
   
   document.addEventListener('DOMContentLoaded', function() {
@@ -74,9 +86,14 @@ function roundAndSeparate() {
       select,
       input[type="date"],
       input[type="radio"],
-      input[type="checkbox"]`
-    )
+      input[type="checkbox"]
+    `);
+
     onChangeEls.forEach(function (onChangeEl) {
       onChangeEl.addEventListener('change', triggerRoundAndSeparate);
+
+      if (onChangeEl.type === 'radio') {
+        handleSpecialCaseForRadioButtons(onChangeEl);
+      }
     });
   });
