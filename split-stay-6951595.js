@@ -68,7 +68,7 @@ function roundAndSeparate() {
   }
 
   function handleSpecialCaseForRadioButtons(el) {
-    const targetedParent = el.closest('[data-type="radio"][data-id]');
+    var targetedParent = el.closest('[data-type="radio"][data-id]');
 
     if (targetedParent === null) return; 
 
@@ -82,7 +82,7 @@ function roundAndSeparate() {
   window.onclick = triggerRoundAndSeparate;
   
   document.addEventListener('DOMContentLoaded', function() {
-    const onChangeEls = document.querySelectorAll(`
+    var onChangeEls = document.querySelectorAll(`
       select,
       input[type="date"],
       input[type="radio"],
@@ -90,10 +90,12 @@ function roundAndSeparate() {
     `);
 
     onChangeEls.forEach(function (onChangeEl) {
-      onChangeEl.addEventListener('change', triggerRoundAndSeparate);
+      onChangeEl.addEventListener('change', function() {
+        triggerRoundAndSeparate();
 
-      if (onChangeEl.type === 'radio') {
-        handleSpecialCaseForRadioButtons(onChangeEl);
-      }
+        if (onChangeEl.type === 'radio') {
+          handleSpecialCaseForRadioButtons(onChangeEl);
+        }
+      });
     });
   });
