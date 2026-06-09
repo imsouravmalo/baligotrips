@@ -68,7 +68,7 @@ function roundAndSeparate() {
   }
 
   function handleSpecialCaseForRadioButtons(el) {
-    const targetedParent = el.target.closest('[data-type="radio"][data-id]');
+    const targetedParent = el.closest('[data-type="radio"][data-id]');
 
     if (targetedParent === null) return; 
 
