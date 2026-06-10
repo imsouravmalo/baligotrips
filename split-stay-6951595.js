@@ -73,7 +73,7 @@ function roundAndSeparate() {
     }
   }
 
-  document.addEventListener('focusout', (e) => {
+  document.addEventListener('focusout', function(e) {
     if (e.target.matches('input, textarea, select')) {
       roundAndSeparate();
     }
