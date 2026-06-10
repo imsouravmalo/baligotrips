@@ -70,6 +70,8 @@ function roundAndSeparate() {
       loader.engine.document.getElementById(121357503).setValue(({"value": "b2bops@baligotrips.com"}));
     } else if(targetedParent.dataset.id === '121357505') {
       loader.engine.document.getElementById(121357503).setValue(({"value": "b2b@baligotrips.com"}));
+    } else if(targetedParent.dataset.id === '121361049') {
+      loader.engine.document.getElementById(121357503).setValue(({"value": "b2b@baligotrips.com"}));
     }
   }
 
