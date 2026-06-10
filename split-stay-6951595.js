@@ -89,6 +89,8 @@ function roundAndSeparate() {
       input[type="checkbox"]
     `);
 
+    console.log(onChangeEls);
+
     onChangeEls.forEach(function (onChangeEl) {
       onChangeEl.addEventListener('change', function() {
         triggerRoundAndSeparate();
