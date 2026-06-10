@@ -60,12 +60,6 @@ function roundAndSeparate() {
     var roundedValue1 = Math.ceil(result1); //- rounding to next integer
   loader.engine.document.getElementById(121322022).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
   };
-  
-  function triggerRoundAndSeparate() {
-    setTimeout(function() {
-      roundAndSeparate();
-    }, 500);
-  }
 
   function handleSpecialCaseForRadioButtons(el) {
     var targetedParent = el.closest('[data-type="radio"][data-id]');
@@ -79,25 +73,21 @@ function roundAndSeparate() {
     }
   }
 
-  window.onclick = triggerRoundAndSeparate;
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    var onChangeEls = document.querySelectorAll(`
-      select,
-      input[type="date"],
-      input[type="radio"],
-      input[type="checkbox"]
-    `);
-
-    console.log(onChangeEls);
-
-    onChangeEls.forEach(function (onChangeEl) {
-      onChangeEl.addEventListener('change', function() {
-        triggerRoundAndSeparate();
-
-        if (onChangeEl.type === 'radio') {
-          handleSpecialCaseForRadioButtons(onChangeEl);
-        }
-      });
-    });
+  document.addEventListener('focusout', (e) => {
+    if (e.target.matches('input, textarea, select')) {
+      roundAndSeparate();
+    }
   });
+  
+  document.addEventListener('change', function(e) {
+    if (e.target.tagName.toLowerCase() === 'select' ||
+        (e.target.tagName.toLowerCase() === 'input' && 
+         (e.target.type === 'date' || e.target.type === 'radio' || e.target.type === 'checkbox'))) {
+      roundAndSeparate();
+
+      if (e.target.type === 'radio') {
+        handleSpecialCaseForRadioButtons(e.target);
+      }
+    }
+  });
+
