@@ -131,11 +131,9 @@ function roundAndSeparate() {
       roundAndSeparate();
     }
   });
-  
+
   document.addEventListener('change', function(e) {
-    if (e.target.tagName.toLowerCase() === 'select' ||
-        (e.target.tagName.toLowerCase() === 'input' && 
-         (e.target.type === 'date' || e.target.type === 'radio' || e.target.type === 'checkbox'))) {
+    if (e.target.matches('input, textarea, select')) {
       roundAndSeparate();
     }
   });
