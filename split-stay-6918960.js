@@ -123,7 +123,7 @@ function roundAndSeparate() {
 	var result1 = loader.engine.document.getElementById(121431271).getProperty('value.value');
     var roundedValue1 = Math.ceil(result1); //- rounding to next integer
   loader.engine.document.getElementById(121431272).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
-  }, 500)
+  }, 100)
 };
   
   ['input', 'change'].forEach(function(event) {
