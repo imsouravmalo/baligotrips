@@ -126,16 +126,12 @@ function roundAndSeparate() {
   }, 500)
 };
   
-  document.addEventListener('focusout', function(e) {
-    if (e.target.matches('input, textarea, select')) {
-      roundAndSeparate();
-    }
-  });
-
-  document.addEventListener('change', function(e) {
-    if (e.target.matches('input, textarea, select')) {
-      roundAndSeparate();
-    }
+  ['input', 'change'].forEach(function(event) {
+    document.addEventListener(event, function(e) {
+      if (e.target.matches('input, textarea, select')) {
+        roundAndSeparate();
+      }
+    });
   });
 
   document.addEventListener('click', roundAndSeparate);
