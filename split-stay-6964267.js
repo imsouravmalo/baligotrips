@@ -71,7 +71,7 @@ function roundAndSeparate() {
 	var result1 = loader.engine.document.getElementById(121447773).getProperty('value.value');
     var roundedValue1 = Math.ceil(result1); //- rounding to next integer
   loader.engine.document.getElementById(121449821).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
-  }, 500);
+  }, 750);
 };
   
   ['input', 'change'].forEach(function(event) {
