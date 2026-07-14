@@ -94,7 +94,7 @@ function roundAndSeparate() {
   }, 1000);
 };
 
-   ['input', 'change'].forEach(function(event) {
+  ['input', 'change'].forEach(function(event) {
     document.addEventListener(event, function(e) {
       if (e.target.matches('input, textarea, select')) {
         roundAndSeparate();
@@ -102,4 +102,8 @@ function roundAndSeparate() {
     });
   });
 
-  document.addEventListener('click', roundAndSeparate);
+  // document.addEventListener('click', roundAndSeparate);
+
+  document.addEventListener('DOMContentLoaded', roundAndSeparate);
+
+
