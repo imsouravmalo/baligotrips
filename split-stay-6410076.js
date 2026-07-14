@@ -104,6 +104,6 @@ function roundAndSeparate() {
 
   // document.addEventListener('click', roundAndSeparate);
 
-  document.addEventListener('DOMContentLoaded', roundAndSeparate);
+  window.addEventListener('load', roundAndSeparate);
 
 
