@@ -52,10 +52,6 @@ function roundAndSeparate() {
       var roundedValue1 = Math.ceil(result1); //- rounding to next integer
     loader.engine.document.getElementById(106656280).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
 
-    var result1 = loader.engine.document.getElementById(106656281).getProperty('value.value');
-      var roundedValue1 = Math.ceil(result1); //- rounding to next integer
-    loader.engine.document.getElementById(106656282).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
-
     var result1 = loader.engine.document.getElementById(106656283).getProperty('value.value');
       var roundedValue1 = Math.ceil(result1); //- rounding to next integer
     loader.engine.document.getElementById(106656284).setValue(({"value": roundedValue1.toLocaleString('en-US')})); //- adds thousand separators
